@@ -1,4 +1,4 @@
-# LAN-file-transfer
+# lan-transfer
 
 ## 项目介绍
 
@@ -7,5 +7,10 @@ LAN-file-transfer 是一个使用Nest开发的局域网文件互传程序，运�
 ## 使用说明
 
 ```shell
+
+cd lan-transfer
+yarn install
+yarn server:build
 yarn start
+
 ```
