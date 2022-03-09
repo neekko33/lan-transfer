@@ -175,46 +175,68 @@ onMounted(() => {
 .el-button {
   font-weight: bold;
 }
-.item,
-.header {
-  margin: 0 20px;
-  font-size: 0.85rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.el-descriptions {
-  margin-right: 50px;
-}
-
-.header {
-  margin-bottom: 15px;
-}
-.data {
-  margin-bottom: 25px;
-}
-.el-pagination {
-  justify-content: center;
-}
-
-.el-icon {
-  margin-right: 8px;
-}
 
 .data .action {
   margin-top: 20px;
   display: flex;
+}
+
+.el-pagination {
   justify-content: center;
-  align-items: center;
 }
-.el-descriptions {
-  margin-top: 20px;
+
+@media screen and (max-width: 479px) {
+  .header {
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .item {
+    margin: 20px 0;
+  }
+  .cell-item {
+    display: none;
+  }
+
+  .data .action {
+    justify-content: space-between;
+  }
 }
-.cell-item {
-  display: flex;
-  align-items: center;
-}
-.margin-top {
-  margin-top: 20px;
+@media screen and (min-width: 480px) {
+  .data .action {
+    justify-content: center;
+    align-items: center;
+  }
+  .item,
+  .header {
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .el-descriptions {
+    margin-right: 50px;
+  }
+
+  .header {
+    margin-bottom: 15px;
+  }
+  .data {
+    margin-bottom: 25px;
+  }
+
+  .el-icon {
+    margin-right: 8px;
+  }
+
+  .el-descriptions {
+    margin-top: 20px;
+  }
+  .cell-item {
+    display: flex;
+    align-items: center;
+  }
+  .margin-top {
+    margin-top: 20px;
+  }
 }
 </style>

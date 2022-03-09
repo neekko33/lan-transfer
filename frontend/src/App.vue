@@ -169,6 +169,16 @@ body,
   font-size: 0.55rem;
 }
 
+@media screen and (max-width: 480px) {
+  .box-card {
+    top: 7%;
+    padding: 0px;
+    min-width: 88vw;
+    max-height: 80vh;
+    overflow: auto;
+  }
+}
+
 .primary {
   color: #4285f4;
 }
