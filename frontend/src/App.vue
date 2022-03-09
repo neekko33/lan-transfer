@@ -80,7 +80,7 @@ const canvasAnimate = () => {
 }
 
 const jump = () => {
-  window.open('https://github.com/neekko33');
+  window.open('https://github.com/neekko33/lan-transfer');
 }
 
 onMounted(() => {
