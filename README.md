@@ -1,6 +1,6 @@
 # lan-transfer
 
-!(lan-trasfer)[https://cdn.jsdelivr.net/gh/neekko33/blog_img/lan-transfer.png]
+![lan-trasfer)](https://cdn.jsdelivr.net/gh/neekko33/blog_img/lan-transfer.png)
 
 ## 项目介绍
 
