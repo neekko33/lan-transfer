@@ -62,7 +62,7 @@ export class AppController {
     try {
       fs.writeFileSync(path.join(basePath, file.originalname), file.buffer);
       return {
-        msg: 'upload suceess',
+        msg: 'upload success',
       };
     } catch (e) {
       return e;
@@ -75,7 +75,7 @@ export class AppController {
     try {
       fs.unlinkSync(path.join(basePath, file.fileName));
       return {
-        msg: 'delete suceess',
+        msg: 'delete success',
       };
     } catch (e) {
       return e;
