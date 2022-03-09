@@ -10,24 +10,25 @@ export function getFiles(page: number, size: number) {
   });
 }
 
-export function upLoadFile(file: HTMLInputElement) {
+export function upLoadFile(file: HTMLInputElement, nickname: string) {
   if (!file.files) return;
   const form = new FormData();
   form.append('file', file.files[0]);
   return axios({
-    url: baseUrl + 'upload',
+    url: baseUrl + 'upload?nickname=' + nickname,
     method: 'POST',
     headers: { 'content-type': 'mutipart/form-data' },
     data: form,
   });
 }
 
-export function delFile(fileName: string) {
+export function delFile(fileName: string, nickname: string) {
   return axios({
     url: baseUrl + 'delete',
     method: 'POST',
     data: {
       fileName,
+      nickname,
     },
   });
 }

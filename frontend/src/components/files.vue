@@ -29,7 +29,7 @@ const getData = async () => {
 // 上传文件
 const upload = async () => {
   const u = document.getElementById("upload");
-  const res = await upLoadFile(u as HTMLInputElement);
+  const res = await upLoadFile(u as HTMLInputElement, user.nickname);
   if (res) {
     const { data: { msg } } = res;
     if (msg) {
@@ -57,12 +57,12 @@ const handleClick = () => {
 
 // 下载文件
 const download = (item: string) => {
-  window.open(baseUrl + 'download?fileName=' + item);
+  window.open(baseUrl + 'download?fileName=' + item + '&nickname=' + user.nickname);
 }
 
 // 删除文件
 const deleteFile = async (item: string) => {
-  const { data: { msg } } = await delFile(item);
+  const { data: { msg } } = await delFile(item, user.nickname);
   if (msg) {
     ElNotification({
       title: 'Success',

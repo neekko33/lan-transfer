@@ -24,15 +24,22 @@ export class AppController {
   //  文件下载
   @Get('download')
   async downloadFile(
+    @Query('nickname') nickname: string,
     @Query('fileName') fileName: string,
     @Res() res: Response,
   ): Promise<any> {
     const filePath = path.join(basePath, fileName);
     res.download(filePath, (err) => {
       if (!err) {
+        console.log(
+          `[${new Date()}] ${nickname} download ${fileName} ====> success!`,
+        );
         return;
       } else {
         res.send('下载失败');
+        console.log(
+          `[${new Date()}] ${nickname} download ${fileName} ====> failed!`,
+        );
       }
     });
   }
@@ -58,13 +65,21 @@ export class AppController {
   // 文件上传
   @Post('upload')
   @UseInterceptors(FileInterceptor('file'))
-  uploadFile(@UploadedFile() file) {
+  uploadFile(@UploadedFile() file, @Query('nickname') nickname: string) {
     try {
       fs.writeFileSync(path.join(basePath, file.originalname), file.buffer);
+      console.log(
+        `[${new Date()}] ${nickname} upload ${
+          file.originalname
+        } ====> success!`,
+      );
       return {
         msg: 'upload success',
       };
     } catch (e) {
+      console.log(
+        `[${new Date()}] ${nickname} upload ${file.originalname} ====> failed!`,
+      );
       return e;
     }
   }
@@ -74,10 +89,20 @@ export class AppController {
   deleteFile(@Body() file: FileDto) {
     try {
       fs.unlinkSync(path.join(basePath, file.fileName));
+      console.log(
+        `[${new Date()}] ${file.nickname} delete ${
+          file.fileName
+        } ====> success!`,
+      );
       return {
         msg: 'delete success',
       };
     } catch (e) {
+      console.log(
+        `[${new Date()}] ${file.nickname} delete ${
+          file.fileName
+        } ====> failed!`,
+      );
       return e;
     }
   }

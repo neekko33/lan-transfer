@@ -4,5 +4,6 @@ export class FilesDto {
 }
 
 export class FileDto {
+  nickname: string;
   fileName: string;
 }
