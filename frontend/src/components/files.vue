@@ -150,7 +150,8 @@ onMounted(() => {
             <div class="cell-item">
               <el-icon>
                 <files />
-              </el-icon>Filename
+              </el-icon>
+              <span>Filename</span>
             </div>
           </template>
           <span style="min-width:200px;display:inline-block;text-align:center">{{ item }}</span>
@@ -194,7 +195,7 @@ onMounted(() => {
   .item {
     margin: 20px 0;
   }
-  .cell-item {
+  .cell-item span {
     display: none;
   }
 

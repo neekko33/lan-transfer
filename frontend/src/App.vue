@@ -174,7 +174,7 @@ body,
     top: 7%;
     padding: 0px;
     min-width: 88vw;
-    max-height: 80vh;
+    max-height: 70vh;
     overflow: auto;
   }
 }
