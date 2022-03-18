@@ -166,6 +166,7 @@ onMounted(() => {
   <el-pagination
     background
     layout="prev, pager, next"
+    :current-page="fileState.page"
     :total="fileState.total"
     :page-size="fileState.size"
     @current-change="handleChange"
